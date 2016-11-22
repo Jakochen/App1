@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage">
+  <StackLayout
+    Orientation="Vertical"
+    Padding="30"
+    >
+  <Entry x:Name="entryIp" Text="" />
+  <Entry x:Name="entryPort" Text="8807"/>
+  <Button x:Name="btnConnect" Text="連線" Clicked="OnRESTfulClicked" />
+  
+  <Label x:Name="lbMSG" Text="Welcome to Xamarin Forms!"
+           VerticalOptions="Center"
+           HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>
