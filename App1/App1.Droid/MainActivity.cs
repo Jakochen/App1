@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -19,10 +18,7 @@ namespace App1.Droid
         protected override void OnCreate(Bundle bundle)
         {
             //clientSocket.Connect("172.20.159.13", 8807);
-            //NetworkStream serverStream = clientSocket.GetStream();
-            //byte[] outStream = System.Text.Encoding.ASCII.GetBytes(textBox2.Text + "$");
-            //serverStream.Write(outStream, 0, outStream.Length);
-            //serverStream.Flush();
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

@@ -5,14 +5,21 @@
              x:Class="App1.MainPage">
   <StackLayout
     Orientation="Vertical"
-    Padding="30"
-    >
-  <Entry x:Name="entryIp" Text="" />
+    Padding="30">
+   
+  <Entry x:Name="entryIp" Text="172.20.159.13" />
   <Entry x:Name="entryPort" Text="8807"/>
-  <Button x:Name="btnConnect" Text="連線" Clicked="OnRESTfulClicked" />
+    <Button x:Name="btnConnect" Text="連線" Clicked="OnConnectClicked" />
+    <Entry x:Name="entryArduinoCode" Text=""/>
+    <Button x:Name="btnSend" Text="送出" Clicked="OnSendClicked" />
   
-  <Label x:Name="lbMSG" Text="Welcome to Xamarin Forms!"
+    <Button x:Name="btnDisconnect" Text="中斷連線" Clicked="OnDisConnectClicked"/>
+    
+  <Label x:Name="lbWelcome" Text="Welcome to Xamarin Forms!"
            VerticalOptions="Center"
            HorizontalOptions="Center" />
+    <Label x:Name="lbMSG" Text="Arduino MobiApp Client Demo"
+         VerticalOptions="Center"
+         HorizontalOptions="Center" />
     </StackLayout>
 </ContentPage>
