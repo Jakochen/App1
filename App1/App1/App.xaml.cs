@@ -12,8 +12,9 @@ namespace App1
         public App()
         {
             InitializeComponent();
-
-            MainPage = new App1.MainPage();
+            var rootPage = new NavigationPage(new LoginPage());
+            MainPage = rootPage;
+            //MainPage = new App1.MainPage();
         }
 
         protected override void OnStart()

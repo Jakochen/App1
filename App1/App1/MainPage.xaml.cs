@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Sockets.Plugin.Abstractions;
 
 namespace App1
 {
     public partial class MainPage : ContentPage
     {
+        List<ITcpSocketClient> _clients = new List<ITcpSocketClient>();
 
         TcpSocketClient client = new TcpSocketClient();
+        CancellationTokenSource _canceller;
 
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
+            NavigationPage.SetBackButtonTitle(this, "回到首頁");
         }
 
         private async void OnSendClicked(object sender, EventArgs e)
@@ -36,23 +41,13 @@ namespace App1
                 string address = entryIp.Text;
                 int port = 0;
                 int.TryParse(entryPort.Text, out port);
-                if(port == 0)
+                if (port == 0)
                 {
                     return;
                 }
 
                 await client.ConnectAsync(address, port);
-                //// we're connected!
-                //for (int i = 0; i < 5; i++)
-                //{
-                //    // write to the 'WriteStream' property of the socket client to send data
-                //    var nextByte = (byte)r.Next(0, 254);
-                //    client.WriteStream.WriteByte(nextByte);
-                //    await client.WriteStream.FlushAsync();
-
-                //    // wait a little before sending the next bit of data
-                //    await Task.Delay(TimeSpan.FromMilliseconds(500));
-                //}                
+                await client.WriteStringAsync("Client Connected", "$");
             }
             catch (Exception ex)
             {
@@ -63,58 +58,11 @@ namespace App1
 
         private async void OnDisConnectClicked(object sender, EventArgs e)
         {
+            //var bytes = Encoding.UTF8.GetBytes("$");
+            //await client.WriteStream.WriteAsync(bytes, 0, bytes.Length);
+            //await client.WriteStream.FlushAsync();
+            await client.WriteStringAsync("Disconnect", "$"); //$ 結束符號
             await client.DisconnectAsync();
         }
-
-            //private void InitView()
-            //{
-            //    Content = new StackLayout()
-            //    {
-            //        Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0),
-            //        Children =
-            //        {
-            //            new ClientConnectView("172.20.159.13", 8807, this)
-            //            {
-            //                ConnectTapped = async (s, i) =>
-            //                {
-            //                    await _client.ConnectAsync(s, i);
-            //                    _canceller = new CancellationTokenSource();
-            //
-            //                    Task.Factory.StartNew(() =>
-            //                    {
-            //                        foreach (var msg in _client.ReadStrings(_canceller.Token))
-            //                        {
-            //                            _messagesSub.OnNext(msg);
-            //                        }
-            //                    }, TaskCreationOptions.LongRunning);
-            //
-            //                    return true;
-            //                },
-            //                DisconnectTapped = async () =>
-            //                {
-            //                    var bytes = Encoding.UTF8.GetBytes("<EOF>");
-            //                    await _client.WriteStream.WriteAsync(bytes, 0, bytes.Length);
-            //                    await _client.WriteStream.FlushAsync();
-            //
-            //                    _canceller.Cancel();
-            //                    await _client.DisconnectAsync();
-            //                }
-            //            },
-            //            new MessagesView(_messagesObs, true)
-            //            {
-            //                SendData = async s =>
-            //                {
-            //                    await _client.WriteStringAsync(s);
-            //
-            //                    return new Message
-            //                    {
-            //                        Text = s,
-            //                        DetailText = String.Format("Sent at {0}", DateTime.Now.ToString("HH:mm:ss"))
-            //                    };
-            //                }
-            //            }
-            //        }
-            //    };
-            //}
-        }
+    }
 }
