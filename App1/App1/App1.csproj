@@ -63,8 +63,13 @@
       <DependentUpon>MasterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MasterPageItem.cs" />
+    <Compile Include="MonkeyDataModel.cs" />
+    <Compile Include="NonNullToBooleanConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SocketExtensions.cs" />
+    <Compile Include="TabPage.xaml.cs">
+      <DependentUpon>TabPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -159,6 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DetailView4.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

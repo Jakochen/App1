@@ -50,6 +50,12 @@ namespace App1
                 Icon = "\uf009",
             });
 
+            masterPageItems.Add(new MasterPageItem
+            {
+                Title = "標籤式的樣板頁面",
+                Icon = "\uf009",
+            });
+
             listView.ItemsSource = masterPageItems;
         }
     }

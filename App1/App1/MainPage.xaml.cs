@@ -72,6 +72,14 @@ namespace App1
                     fooMasterPage.MyListView.SelectedItem = null;
                     IsPresented = false;
                 }
+                else if(item.Title == "標籤式的樣板頁面")
+                {
+                    Detail = new NavigationPage(new TabPage());
+                    var fooPage = this.Master;
+
+                    fooMasterPage.MyListView.SelectedItem = null;
+                    IsPresented = false;
+                }
             }
         }
     }
