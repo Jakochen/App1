@@ -46,7 +46,7 @@
                     Padding="10,5,10,5"
                   >
                     <Grid.ColumnDefinitions>
-                      <ColumnDefinition Width="30" />
+                      <ColumnDefinition Width="32" />
                       <ColumnDefinition Width="260" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>

@@ -26,7 +26,7 @@ namespace App1
             masterPageItems.Add(new MasterPageItem
             {
                 Title = "XF 登入跳轉自訂頁面",
-                Icon = "\uf00b",
+                Icon = "\xf0f0",
             });
 
             masterPageItems.Add(new MasterPageItem
@@ -53,7 +53,7 @@ namespace App1
             masterPageItems.Add(new MasterPageItem
             {
                 Title = "標籤式的樣板頁面",
-                Icon = "\uf009",
+                Icon = "\xf243",
             });
 
             listView.ItemsSource = masterPageItems;
