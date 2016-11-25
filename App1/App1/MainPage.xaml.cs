@@ -9,60 +9,70 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Sockets.Plugin.Abstractions;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace App1
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : MasterDetailPage
     {
-        List<ITcpSocketClient> _clients = new List<ITcpSocketClient>();
-
-        TcpSocketClient client = new TcpSocketClient();
-        CancellationTokenSource _canceller;
+        MasterPage fooMasterPage = new MasterPage();
 
         public MainPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasBackButton(this, false);
-            NavigationPage.SetBackButtonTitle(this, "回到首頁");
+            this.Master = fooMasterPage;
+            this.Detail = new NavigationPage(new LoginPage());
+
+            fooMasterPage.MyListView.ItemSelected += OnItemSelected;
         }
 
-        private async void OnSendClicked(object sender, EventArgs e)
+        private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            string s_code = entryArduinoCode.Text;
-            await client.WriteStringAsync(s_code, "$"); //$ 結束符號
-        }
-
-        private async void OnConnectClicked(object sender, EventArgs e)
-        {
-            try
+            var item = e.SelectedItem as MasterPageItem;
+            if (item != null)
             {
-                //string address = "172.20.159.13";
-                //int port = 8807;
-                string address = entryIp.Text;
-                int port = 0;
-                int.TryParse(entryPort.Text, out port);
-                if (port == 0)
+                if(item.Title == "XF 登入跳轉自訂頁面")
                 {
-                    return;
+                    Detail = new NavigationPage(new LoginPage());
+                    var fooPage = this.Master;
+
+                    fooMasterPage.MyListView.SelectedItem = null;
+                    IsPresented = false;
                 }
+                else if (item.Title == "XF 控制項1")
+                {
+                    Detail = new NavigationPage(new DetailView1());
+                    var fooPage = this.Master;
 
-                await client.ConnectAsync(address, port);
-                await client.WriteStringAsync("Client Connected", "$");
+                    fooMasterPage.MyListView.SelectedItem = null;
+                    IsPresented = false;
+                }
+                else if (item.Title == "XF 控制項2")
+                {
+                    Detail = new NavigationPage(new DetailView2());
+                    var fooPage = this.Master;
+
+                    fooMasterPage.MyListView.SelectedItem = null;
+                    IsPresented = false;
+                }
+                else if (item.Title == "Grid版面配置")
+                {
+                    Detail = new NavigationPage(new DetailView3());
+                    var fooPage = this.Master;
+
+                    fooMasterPage.MyListView.SelectedItem = null;
+                    IsPresented = false;
+                }
+                else if (item.Title == "堆疊與捲動版面配置")
+                {
+                    Detail = new NavigationPage(new DetailView4());
+                    var fooPage = this.Master;
+
+                    fooMasterPage.MyListView.SelectedItem = null;
+                    IsPresented = false;
+                }
             }
-            catch (Exception ex)
-            {
-                await DisplayAlert("INFO", ex.ToString(), "");
-            }
-        }
-
-
-        private async void OnDisConnectClicked(object sender, EventArgs e)
-        {
-            //var bytes = Encoding.UTF8.GetBytes("$");
-            //await client.WriteStream.WriteAsync(bytes, 0, bytes.Length);
-            //await client.WriteStream.FlushAsync();
-            await client.WriteStringAsync("Disconnect", "$"); //$ 結束符號
-            await client.DisconnectAsync();
         }
     }
 }

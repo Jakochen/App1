@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.CoustomPage">
+  <StackLayout
+    Orientation="Vertical"
+    Padding="30">
+
+    <!--<Label x:Name="lbWelcome" Text="Welcome to Xamarin Forms!"
+         VerticalOptions="Center"
+         HorizontalOptions="Center" />-->
+    <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <Entry x:Name="entryIp" Text="172.20.159.13" />
+  <Entry x:Name="entryPort" Text="8807"/>
+    <Button x:Name="btnConnect" Text="連線" Clicked="OnConnectClicked" />
+    <Button x:Name="btnDisconnect" Text="中斷連線" Clicked="OnDisConnectClicked"/>
+    <Entry x:Name="entryArduinoCode" Text=""/>
+    <Button x:Name="btnSend" Text="送出" Clicked="OnSendClicked" />
+  
+    <Label x:Name="lbMSG" Text="Arduino MobiApp Client Demo"
+         VerticalOptions="Center"
+         HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>

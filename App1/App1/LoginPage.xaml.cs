@@ -19,8 +19,8 @@ namespace App1
 
         private async void ButtonLogin_Clicked(object sender, EventArgs e)
         {
-            // 切換到主頁面
-            var NextPage = new MainPage();
+            // 切換到自訂頁面
+            var NextPage = new CoustomPage();
 
             await Navigation.PushAsync(NextPage);
 
