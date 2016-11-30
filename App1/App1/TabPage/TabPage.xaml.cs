@@ -8,7 +8,7 @@ using Xamarin.Forms;
 //using Xamarin.Forms.Xaml;
 
 //[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace App1
+namespace App1.TabPage
 {
     public partial class TabPage : TabbedPage
     {

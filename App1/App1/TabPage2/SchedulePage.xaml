@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.TabPage2.SchedulePage"
+             Title="This Week">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout>
+    <Label
+      Text="This week's appointments go here"
+      HorizontalOptions="Center"
+      VerticalOptions="CenterAndExpand" />
+    <Button
+      Text="Upcoming Appointments"
+      Clicked="OnUpcomingAppointmentsButtonClicked"
+      VerticalOptions="CenterAndExpand" />
+  </StackLayout>
+</ContentPage>

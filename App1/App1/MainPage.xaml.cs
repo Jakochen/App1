@@ -22,7 +22,7 @@ namespace App1
         {
             InitializeComponent();
             this.Master = fooMasterPage;
-            this.Detail = new NavigationPage(new LoginPage());
+            this.Detail = new NavigationPage(new LoginPage.LoginPage());
 
             fooMasterPage.MyListView.ItemSelected += OnItemSelected;
         }
@@ -34,7 +34,7 @@ namespace App1
             {
                 if(item.Title == "XF 登入跳轉自訂頁面")
                 {
-                    Detail = new NavigationPage(new LoginPage());
+                    Detail = new NavigationPage(new LoginPage.LoginPage());
                     var fooPage = this.Master;
 
                     fooMasterPage.MyListView.SelectedItem = null;
@@ -42,7 +42,7 @@ namespace App1
                 }
                 else if (item.Title == "XF 控制項1")
                 {
-                    Detail = new NavigationPage(new DetailView1());
+                    Detail = new NavigationPage(new NavigationDemo.DetailView1());
                     var fooPage = this.Master;
 
                     fooMasterPage.MyListView.SelectedItem = null;
@@ -50,7 +50,7 @@ namespace App1
                 }
                 else if (item.Title == "XF 控制項2")
                 {
-                    Detail = new NavigationPage(new DetailView2());
+                    Detail = new NavigationPage(new NavigationDemo.DetailView2());
                     var fooPage = this.Master;
 
                     fooMasterPage.MyListView.SelectedItem = null;
@@ -58,7 +58,7 @@ namespace App1
                 }
                 else if (item.Title == "Grid版面配置")
                 {
-                    Detail = new NavigationPage(new DetailView3());
+                    Detail = new NavigationPage(new NavigationDemo.DetailView3());
                     var fooPage = this.Master;
 
                     fooMasterPage.MyListView.SelectedItem = null;
@@ -66,7 +66,7 @@ namespace App1
                 }
                 else if (item.Title == "堆疊與捲動版面配置")
                 {
-                    Detail = new NavigationPage(new DetailView4());
+                    Detail = new NavigationPage(new NavigationDemo.DetailView4());
                     var fooPage = this.Master;
 
                     fooMasterPage.MyListView.SelectedItem = null;
@@ -74,7 +74,15 @@ namespace App1
                 }
                 else if(item.Title == "標籤式的樣板頁面")
                 {
-                    Detail = new NavigationPage(new TabPage());
+                    Detail = new NavigationPage(new TabPage.TabPage());
+                    var fooPage = this.Master;
+
+                    fooMasterPage.MyListView.SelectedItem = null;
+                    IsPresented = false;
+                }
+                else if (item.Title == "標籤式的導覽頁面")
+                {
+                    Detail = new NavigationPage(new TabPage2.TabPage2());
                     var fooPage = this.Master;
 
                     fooMasterPage.MyListView.SelectedItem = null;

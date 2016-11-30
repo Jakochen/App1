@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1.TabPage2"
+             x:Class="App1.TabPage2.TabPage2"
+            Title="標籤式的導覽頁面"
+            >
+  <local:TodayPage />
+  <NavigationPage Title="Schedule" >
+    <x:Arguments>
+      <local:SchedulePage />
+    </x:Arguments>
+  </NavigationPage>
+  <local:SettingsPage />
+
+</TabbedPage>

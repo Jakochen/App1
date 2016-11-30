@@ -38,19 +38,19 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DetailView1.xaml.cs">
+    <Compile Include="NavigationDemo\DetailView1.xaml.cs">
       <DependentUpon>DetailView1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DetailView2.xaml.cs">
+    <Compile Include="NavigationDemo\DetailView2.xaml.cs">
       <DependentUpon>DetailView2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DetailView3.xaml.cs">
+    <Compile Include="NavigationDemo\DetailView3.xaml.cs">
       <DependentUpon>DetailView3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DetailView4.xaml.cs">
+    <Compile Include="NavigationDemo\DetailView4.xaml.cs">
       <DependentUpon>DetailView4.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.xaml.cs">
+    <Compile Include="LoginPage\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomPage.xaml.cs">
@@ -66,9 +66,24 @@
     <Compile Include="MonkeyDataModel.cs" />
     <Compile Include="NonNullToBooleanConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabPage2\SchedulePage.xaml.cs">
+      <DependentUpon>SchedulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabPage2\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SocketExtensions.cs" />
-    <Compile Include="TabPage.xaml.cs">
+    <Compile Include="TabPage2\TabPage2.xaml.cs">
+      <DependentUpon>TabPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabPage\TabPage.xaml.cs">
       <DependentUpon>TabPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabPage2\TodayPage.xaml.cs">
+      <DependentUpon>TodayPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabPage2\UpcomingAppointmentsPage.xaml.cs">
+      <DependentUpon>UpcomingAppointmentsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -127,7 +142,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoginPage.xaml">
+    <EmbeddedResource Include="LoginPage\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -145,31 +160,61 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DetailView1.xaml">
+    <EmbeddedResource Include="NavigationDemo\DetailView1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DetailView2.xaml">
+    <EmbeddedResource Include="NavigationDemo\DetailView2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DetailView3.xaml">
+    <EmbeddedResource Include="NavigationDemo\DetailView3.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DetailView4.xaml">
+    <EmbeddedResource Include="NavigationDemo\DetailView4.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TabPage.xaml">
+    <EmbeddedResource Include="TabPage\TabPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabPage2\TabPage2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabPage2\TodayPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabPage2\SchedulePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabPage2\UpcomingAppointmentsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabPage2\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

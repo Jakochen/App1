@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace App1
+namespace App1.NavigationDemo
 {
     public partial class DetailView1 : ContentPage
     {

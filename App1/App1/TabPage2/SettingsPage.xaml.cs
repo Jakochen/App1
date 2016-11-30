@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace App1
+namespace App1.TabPage2
 {
-    public partial class DetailView3 : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public DetailView3()
+        public SettingsPage()
         {
             InitializeComponent();
         }

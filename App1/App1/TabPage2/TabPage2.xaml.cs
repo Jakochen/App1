@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+//using Xamarin.Forms.Xaml;
 
-namespace App1
+//[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+namespace App1.TabPage2
 {
-    public partial class DetailView4 : ContentPage
+    public partial class TabPage2 : TabbedPage
     {
-        public DetailView4()
+        public TabPage2()
         {
             InitializeComponent();
         }

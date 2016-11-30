@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace App1
+namespace App1.LoginPage
 {
     public partial class LoginPage : ContentPage
     {

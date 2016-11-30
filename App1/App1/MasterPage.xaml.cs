@@ -56,6 +56,12 @@ namespace App1
                 Icon = "\xf243",
             });
 
+            masterPageItems.Add(new MasterPageItem
+            {
+                Title = "標籤式的導覽頁面",
+                Icon = "\xf243",
+            });
+
             listView.ItemsSource = masterPageItems;
         }
     }
